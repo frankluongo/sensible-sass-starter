@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  max-width: $setting-container-width;
+  @include horizontal-spacing(margin, auto);
+  @include horizontal-spacing(padding, 1rem);
+}
+
+.container.full {
+  @include horizontal-spacing(padding, 0);
+}
+
+@include breakpoint(medium) {
+  .container:not(.full) {
+    @include horizontal-spacing(padding, 2rem);
+  }
+}
