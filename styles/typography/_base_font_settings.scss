@@ -1,0 +1,8 @@
+html {
+  font-size: 100%;
+}
+
+html,
+body {
+  font-family: map-get($setting-fonts, primary);
+}

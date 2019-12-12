@@ -1,0 +1,54 @@
+$primary-color: hsl(0%, 0%, 100%);
+$secondary-color: hsl(50%, 50%, 50%);
+$tertiary-color: hsl(50%, 50%, 50%);
+
+$primary-colorscale: (
+  1: hsl(0%, 0%, 0%),
+  2: hsl(0%, 0%, 0%),
+  3: hsl(0%, 0%, 0%),
+  4: $primary-color,
+  5: hsl(0%, 0%, 0%),
+  6: hsl(0%, 0%, 0%),
+  7: hsl(0%, 0%, 0%)
+);
+$secondary-colorscale: (
+  1: hsl(0%, 0%, 0%),
+  2: hsl(0%, 0%, 0%),
+  3: hsl(0%, 0%, 0%),
+  4: $secondary-color,
+  5: hsl(0%, 0%, 0%),
+  6: hsl(0%, 0%, 0%),
+  7: hsl(0%, 0%, 0%)
+);
+$tertiary-colorscale: (
+  1: hsl(0%, 0%, 0%),
+  2: hsl(0%, 0%, 0%),
+  3: hsl(0%, 0%, 0%),
+  4: $tertiary-color,
+  5: hsl(0%, 0%, 0%),
+  6: hsl(0%, 0%, 0%),
+  7: hsl(0%, 0%, 0%)
+);
+
+$grayscale: (
+  1: hsl(0%, 0%, 0%),
+  2: hsl(0%, 0%, 0%),
+  3: hsl(0%, 0%, 0%),
+  4: hsl(0%, 0%, 0%),
+  5: hsl(0%, 0%, 0%),
+  6: hsl(0%, 0%, 0%),
+  7: hsl(0%, 0%, 0%)
+);
+
+@function primaryColor($num: 4) {
+  @return map-get($primary-colorscale, $num);
+}
+@function secondaryColor($num: 4) {
+  @return map-get($secondary-colorscale, $num);
+}
+@function tertiaryColor($num: 4) {
+  @return map-get($tertiary-colorscale, $num);
+}
+@function grayColor($num: 4) {
+  @return map-get($grayscale, $num);
+}

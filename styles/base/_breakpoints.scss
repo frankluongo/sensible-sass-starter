@@ -1,7 +1,3 @@
-//
-// Breakpoint Variables
-//
-
 $setting-breakpoint-sizes: (
   xsmall: 0,
   small: 640px,
@@ -10,23 +6,12 @@ $setting-breakpoint-sizes: (
   xlarge: 1440px
 );
 
-$setting-breakpoints: (
-  "xsmall": getBreakpoint(xsmall),
-  "small only": getOnlyValues(small, medium),
-  "small down": getDownValues(small),
-  "medium down": getDownValues(medium),
-  "medium only": getOnlyValues(medium, large),
-  "large down": getDownValues(large),
-  "large only": getOnlyValues(large, xlarge),
-  "xlarge": getBreakpoint(xlarge)
-);
-
 //
 // Breakpoint Functions
 //
 
-@function getBreakpoint($size, $breakpoint-sizes: $setting-breakpoint-sizes) {
-  @return map-get($breakpoint-sizes, $size);
+@function getBreakpoint($size) {
+  @return map-get($setting-breakpoint-sizes, $size);
 }
 
 @function getDownValues($end-breakpoint) {
@@ -38,15 +23,33 @@ $setting-breakpoints: (
 }
 
 @function getMaxSize($breakpoint-value) {
-  @return (breakpoint($breakpoint-value) - $setting-max-size-decrement);
+  @return (getBreakpoint($breakpoint-value) - $setting-max-size-decrement);
 }
+
+//
+// Breakpoint Variables
+//
+
+$setting-breakpoints: (
+  "xsmall": getBreakpoint(xsmall),
+  "small": getBreakpoint(small),
+  "small-only": getOnlyValues(small, medium),
+  "small-down": getDownValues(small),
+  "medium": getBreakpoint(medium),
+  "medium-down": getDownValues(medium),
+  "medium-only": getOnlyValues(medium, large),
+  "large": getBreakpoint(large),
+  "large-down": getDownValues(large),
+  "large-only": getOnlyValues(large, xlarge),
+  "xlarge": getBreakpoint(xlarge)
+);
 
 //
 // The Breakpoint Mixin
 //
 
-@mixin breakpoint($user-input-breakpoint, $breakpoints: $setting-breakpoints) {
-  @each $breakpoint, $value in $breakpoints {
+@mixin breakpoint($user-input-breakpoint) {
+  @each $breakpoint, $value in $setting-breakpoints {
     @if ($user-input-breakpoint == $breakpoint) {
       @if type-of($value) == list {
         @media screen and (min-width: nth($value, 1)) and (max-width: nth($value, 2)) {
@@ -57,8 +60,6 @@ $setting-breakpoints: (
           @content;
         }
       }
-    } @else {
-      @error "Unknown Breakpoint #{$user-input-breakpoint}.";
     }
   }
 }
