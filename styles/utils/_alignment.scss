@@ -1,0 +1,23 @@
+@each $option in $setting-alignment-options {
+  .align-items-#{$option} {
+    align-items: $option;
+  }
+  .align-content-#{$option} {
+    align-content: $option;
+  }
+  .align-self-#{$option} {
+    align-self: $option;
+  }
+}
+
+@each $option in $setting-justification-options {
+  .justify-items-#{$option} {
+    justify-items: $option;
+  }
+  .justify-content-#{$option} {
+    justify-content: $option;
+  }
+  .justify-self-#{$option} {
+    justify-self: $option;
+  }
+}

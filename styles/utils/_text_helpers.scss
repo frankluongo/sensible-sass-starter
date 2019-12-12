@@ -1,0 +1,16 @@
+@each $option in $setting-text-align-options {
+  .text-align-#{$option} {
+    text-align: $option;
+  }
+}
+@each $option in $setting-text-case-options {
+  .text-case-#{$option} {
+    text-transform: $option;
+  }
+}
+
+@each $weight in $setting-text-weights {
+  .text-weight-#{$weight} {
+    font-weight: $weight;
+  }
+}

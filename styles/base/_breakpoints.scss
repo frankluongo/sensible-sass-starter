@@ -1,0 +1,64 @@
+//
+// Breakpoint Variables
+//
+
+$setting-breakpoint-sizes: (
+  xsmall: 0,
+  small: 640px,
+  medium: 960px,
+  large: 1280px,
+  xlarge: 1440px
+);
+
+$setting-breakpoints: (
+  "xsmall": getBreakpoint(xsmall),
+  "small only": getOnlyValues(small, medium),
+  "small down": getDownValues(small),
+  "medium down": getDownValues(medium),
+  "medium only": getOnlyValues(medium, large),
+  "large down": getDownValues(large),
+  "large only": getOnlyValues(large, xlarge),
+  "xlarge": getBreakpoint(xlarge)
+);
+
+//
+// Breakpoint Functions
+//
+
+@function getBreakpoint($size, $breakpoint-sizes: $setting-breakpoint-sizes) {
+  @return map-get($breakpoint-sizes, $size);
+}
+
+@function getDownValues($end-breakpoint) {
+  @return (0, getBreakpoint($end-breakpoint));
+}
+
+@function getOnlyValues($start-breakpoint, $end-breakpoint) {
+  @return (getBreakpoint($start-breakpoint), getMaxSize($end-breakpoint));
+}
+
+@function getMaxSize($breakpoint-value) {
+  @return (breakpoint($breakpoint-value) - $setting-max-size-decrement);
+}
+
+//
+// The Breakpoint Mixin
+//
+
+@mixin breakpoint($user-input-breakpoint, $breakpoints: $setting-breakpoints) {
+  @each $breakpoint, $value in $breakpoints {
+    @if ($user-input-breakpoint == $breakpoint) {
+      @if type-of($value) == list {
+        @media screen and (min-width: nth($value, 1)) and (max-width: nth($value, 2)) {
+          @content;
+        }
+      } @else {
+        @media screen and (min-width: $value) {
+          @content;
+        }
+      }
+    } @else {
+      @error "Unknown Breakpoint #{$user-input-breakpoint}.";
+    }
+  }
+}
