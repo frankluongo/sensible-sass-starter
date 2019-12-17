@@ -1,0 +1,48 @@
+@mixin button-type-builder(
+  $textColor,
+  $bgColor,
+  $borderColor,
+  $isOutline: false
+) {
+  color: $textColor;
+
+  background-color: $bgColor;
+  border: 1px solid $borderColor;
+
+  &:hover {
+    @if $isOutline {
+      color: $white;
+    } @else {
+      color: $borderColor;
+    }
+
+    background-color: $textColor;
+    border: 1px solid $textColor;
+    @include elevation(1);
+  }
+
+  &.alt {
+    @if $isOutline {
+      color: $white;
+
+      background-color: $bgColor;
+      border: 1px solid $white;
+    } @else {
+      color: $borderColor;
+
+      background-color: $textColor;
+      border: 1px solid $textColor;
+    }
+
+    &:hover {
+      background-color: $borderColor;
+      border: 1px solid $borderColor;
+
+      @if $isOutline {
+        color: $white;
+      } @else {
+        color: $textColor;
+      }
+    }
+  }
+}

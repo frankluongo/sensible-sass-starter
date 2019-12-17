@@ -1,0 +1,13 @@
+@mixin block-spacing($type, $amount) {
+  #{$type}-bottom: $amount;
+  #{$type}-block-end: $amount;
+  #{$type}-top: $amount;
+  #{$type}-block-start: $amount;
+}
+
+@mixin inline-spacing($type, $amount) {
+  #{$type}-left: $amount;
+  #{$type}-inline-start: $amount;
+  #{$type}-right: $amount;
+  #{$type}-inline-end: $amount;
+}

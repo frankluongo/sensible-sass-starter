@@ -6,8 +6,24 @@
           margin-#{$direction}: #{$i}rem;
         }
 
+        .m-#{$break}-block-#{$i} {
+          @include block-spacing("margin", #{$i}rem);
+        }
+
+        .m-#{$break}-inline-#{$i} {
+          @include inline-spacing("margin", #{$i}rem);
+        }
+
         .p-#{$break}-#{$i} {
           padding: #{$i}rem;
+        }
+
+        .p-#{$break}-block-#{$i} {
+          @include block-spacing("padding", #{$i}rem);
+        }
+
+        .p-#{$break}-inline-#{$i} {
+          @include inline-spacing("padding", #{$i}rem);
         }
 
         .p-#{$break}-#{$direction}-#{$i} {

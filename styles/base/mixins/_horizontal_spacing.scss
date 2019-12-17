@@ -1,4 +1,0 @@
-@mixin horizontal-spacing($type, $amount) {
-  #{$type}-left: $amount;
-  #{$type}-right: $amount;
-}
