@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./styles/application.scss" />
     <title>Sass Starter Stylesheet</title>
   </head>
   <body>
@@ -70,6 +69,20 @@
           </p>
         </div>
       </section>
+
+      <section class="container">
+        <button class="dblock xs:mt-2 md:mt-1">I am a button</button>
+      </section>
+
+      <section class="container mt-3 dgrid grid-cols-4 gap-1">
+        <ul class="xs:col-span-4 md:col-span-3 xs:space-y-1 md:dflex md:space-y-0 md:space-x-1 xs:p-1 sm:p-2">
+          <li>this is an item</li>
+          <li>this is another item</li>
+          <li>this is item 3</li>
+        </ul>
+        <div class="xs:col-span-4 md:col-span-1 xs:order-0 xs:p-1 sm:p-2">I am another thing</div>
+      </section>
     </main>
+    <script src="./scripts/application.js"></script>
   </body>
 </html>

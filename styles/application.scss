@@ -1,5 +1,14 @@
-@import "./base/all";
-@import "./global/all";
-@import "./typography/all";
-@import "./layout/all";
-@import "./utils/all";
+@import "./base";
+@import "./boxAlignment";
+@import "./flex";
+@import "./global";
+@import "./grid";
+@import "./layout";
+@import "./spacing";
+@import "./typography";
+@import "./utils";
+@import "./vendor";
+
+@import "./components";
+@import "./pages";
+@import "./templates";

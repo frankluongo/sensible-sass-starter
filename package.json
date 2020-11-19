@@ -6,6 +6,6 @@
   "author": "Frank Luongo <frank@frankluongo.com>",
   "license": "MIT",
   "devDependencies": {
-    "sass": "^1.23.7"
+    "sass": "^1.29.0"
   }
 }

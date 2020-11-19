@@ -1,7 +1,0 @@
-@mixin transition(
-  $prop: all,
-  $duration: $setting-default-transition-speed,
-  $easing: ease-in-out
-) {
-  transition: $prop $duration $easing;
-}
