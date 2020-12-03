@@ -1,6 +1,7 @@
+// All type related styles go here
 html,
 body {
-  font-family: map-get($setting-fonts, primary);
+  font-family: var(--type-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

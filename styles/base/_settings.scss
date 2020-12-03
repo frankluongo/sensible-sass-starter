@@ -1,49 +1,3 @@
-$setting-fonts: (
-  primary: #{-apple-system,
-  BlinkMacSystemFont,
-  "Segoe UI",
-  Roboto,
-  Helvetica,
-  Arial,
-  sans-serif,
-  "Apple Color Emoji",
-  "Segoe UI Emoji",
-  "Segoe UI Symbol"},
-  secondary: #{-apple-system,
-  BlinkMacSystemFont,
-  "Segoe UI",
-  Roboto,
-  Helvetica,
-  Arial,
-  sans-serif,
-  "Apple Color Emoji",
-  "Segoe UI Emoji",
-  "Segoe UI Symbol"},
-  tertiary: #{-apple-system,
-  BlinkMacSystemFont,
-  "Segoe UI",
-  Roboto,
-  Helvetica,
-  Arial,
-  sans-serif,
-  "Apple Color Emoji",
-  "Segoe UI Emoji",
-  "Segoe UI Symbol"},
-);
-$setting-justification-options: (
-  flex-start,
-  flex-end,
-  center,
-  space-between,
-  space-around,
-  space-evenly
-);
-$setting-max-size-decrement: 1;
-$setting-spacer-directions: (top, left, bottom, right);
-$setting-text-align-options: (center, left, right);
-$setting-text-case-options: (lowercase, uppercase, capitalize);
-$setting-text-weights: (300, 400, 500, 700);
-
 $breakpoints: (
   xs: 0px,
   sm: 640px,
@@ -75,6 +29,43 @@ $columnAndRowSpans: (
 
 $columnAndRowStartsAndEnds: (auto, 1, 2, 3, 4, 5, 6);
 
+$fontSizes: (
+  xs: 0.75rem,
+  sm: 0.875rem,
+  def: 1rem,
+  lg: 1.125rem,
+  xl: 1.25rem,
+  xl2: 1.5rem,
+  xl3: 1.875rem,
+  xl4: 2.25rem,
+  xl5: 3rem,
+  xl6: 3.75rem,
+  xl7: 4.5rem,
+  xl8: 6rem,
+  xl9: 8rem,
+);
+
+$lineHeights: (
+  1: 1,
+  1\.2: 1.2,
+  1\.5: 1.5,
+  1\.6: 1.618,
+  2: 2,
+);
+
+$sizing: (
+  0: 0px,
+  1\/6: 16.66667%,
+  2\/6: 33.3333%,
+  3\/6: 50%,
+  4\/6: 66.66667%,
+  5\/6: 83.33333%,
+  full: 100%,
+  screen: 100vw,
+  min: min-content,
+  max: max-content,
+);
+
 $spacing: (
   auto: auto,
   0: 0,
@@ -90,9 +81,4 @@ $spacing: (
   7: 7,
   8: 8,
   9: 9,
-);
-
-$theme: (
-  containerWidth: 90rem,
-  containerWidthSlim: 60rem,
 );

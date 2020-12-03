@@ -1,0 +1,15 @@
+@each $size, $value in $fontSizes {
+  .fs-#{$size} {
+    font-size: #{$value};
+  }
+}
+
+@each $point, $value in $breakpoints {
+  @include media($value) {
+    @each $size, $value in $fontSizes {
+      .#{$point}\:fs-#{$size} {
+        font-size: #{$value};
+      }
+    }
+  }
+}

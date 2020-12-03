@@ -1,0 +1,15 @@
+@each $size, $value in $sizing {
+  .min-w-#{$size} {
+    min-width: #{$value};
+  }
+}
+
+@each $point, $value in $breakpoints {
+  @include media($value) {
+    @each $size, $value in $sizing {
+      .#{$point}\:min-w-#{$size} {
+        min-width: #{$value};
+      }
+    }
+  }
+}

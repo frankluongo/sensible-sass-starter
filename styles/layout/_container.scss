@@ -1,12 +1,12 @@
 .container {
   width: 100%;
-  max-width: map-get($theme, containerWidth);
+  max-width: var(--container-width);
   @include spacing-inline(margin, auto);
   @include spacing-inline(padding, 1rem);
 }
 
 .container--slim {
-  max-width: map-get($theme, containerWidthSlim);
+  max-width: var(--container-width-slim);
 }
 
 @include media(map-get($breakpoints, medium)) {

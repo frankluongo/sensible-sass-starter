@@ -1,0 +1,17 @@
+$decorations: (underline, line-through, none);
+
+@each $decoration in $decorations {
+  .#{$decoration} {
+    text-decoration: $decoration;
+  }
+}
+
+@each $point, $value in $breakpoints {
+  @include media($value) {
+    @each $decoration in $decorations {
+      .#{$point}\:#{$decoration} {
+        text-decoration: $decoration;
+      }
+    }
+  }
+}

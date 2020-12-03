@@ -1,0 +1,15 @@
+@each $size, $value in $sizing {
+  .max-w-#{$size} {
+    max-width: #{$value};
+  }
+}
+
+@each $point, $value in $breakpoints {
+  @include media($value) {
+    @each $size, $value in $sizing {
+      .#{$point}\:max-w-#{$size} {
+        max-width: #{$value};
+      }
+    }
+  }
+}

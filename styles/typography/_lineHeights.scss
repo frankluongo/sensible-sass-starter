@@ -1,0 +1,15 @@
+@each $size, $value in $lineHeights {
+  .lh-#{$size} {
+    line-height: #{$value};
+  }
+}
+
+@each $point, $value in $breakpoints {
+  @include media($value) {
+    @each $size, $value in $lineHeights {
+      .#{$point}\:lh-#{$size} {
+        line-height: #{$value};
+      }
+    }
+  }
+}

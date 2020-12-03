@@ -1,0 +1,17 @@
+$textTransforms: (uppercase, lowercase, capitalize);
+
+@each $transform in $textTransforms {
+  .#{$transform} {
+    text-transform: $transform;
+  }
+}
+
+@each $point, $value in $breakpoints {
+  @include media($value) {
+    @each $transform in $textTransforms {
+      .#{$point}\:#{$transform} {
+        text-transform: $transform;
+      }
+    }
+  }
+}

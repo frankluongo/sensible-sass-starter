@@ -1,0 +1,15 @@
+@each $size, $value in $sizing {
+  .h-#{$size} {
+    height: #{$value};
+  }
+}
+
+@each $point, $value in $breakpoints {
+  @include media($value) {
+    @each $size, $value in $sizing {
+      .#{$point}\:h-#{$size} {
+        height: #{$value};
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+$weights: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+
+@each $weight in $weights {
+  .weight-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+@each $point, $value in $breakpoints {
+  @include media($value) {
+    @each $weight in $weights {
+      .#{$point}\:weight-#{$weight} {
+        font-weight: $weight;
+      }
+    }
+  }
+}
