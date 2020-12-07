@@ -1,7 +1,7 @@
 $positions: (static, fixed, absolute, relative, sticky);
 
 @each $position in $positions {
-  .d#{$position} {
+  .p#{$position} {
     position: $position;
   }
 }
