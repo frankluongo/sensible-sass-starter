@@ -5,7 +5,7 @@ module.exports = (env = {}) => {
   const mode = env.production ? "production" : "development";
   return {
     mode,
-    entry: "./src/index.js",
+    entry: "./src/application.js",
     output: {
       filename: "index.js",
       path: path.resolve(__dirname, ""),
