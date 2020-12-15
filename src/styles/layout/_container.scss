@@ -9,7 +9,7 @@
   max-width: var(--container-width-slim);
 }
 
-@include media(map-get($breakpoints, medium)) {
+@include media(map-get($breakpoints, md)) {
   .container {
     @include spacing-inline(padding, 2rem);
   }
