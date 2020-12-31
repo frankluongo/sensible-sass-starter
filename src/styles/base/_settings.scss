@@ -31,32 +31,19 @@ $columnAndRowSpans: (
 $columnAndRowStartsAndEnds: (auto, 1, 2, 3, 4, 5, 6);
 
 $fontSizes: (
-  xs: 0.75rem,
-  // 12px
-  sm: 0.875rem,
-  // 14px
-  def: 1rem,
-  // 16px
-  lg: 1.125rem,
-  // 18px
-  xl: 1.25rem,
-  // 20px
-  xl2: 1.5rem,
-  // 24px
-  xl3: 1.875rem,
-  // 30px
-  xl4: 2.25rem,
-  // 36px
-  xl5: 3rem,
-  // 48px
-  xl6: 3.75rem,
-  // 60px
-  xl7: 4.5rem,
-  // 72px
-  xl8: 6rem,
-  // 96px
-  xl9: 8rem,
-  // 128px
+  xs: 0.75rem,   // 12px
+  sm: 0.875rem,  // 14px
+  def: 1rem,     // 16px
+  lg: 1.125rem,  // 18px
+  xl: 1.25rem,   // 20px
+  xl2: 1.5rem,   // 24px
+  xl3: 1.875rem, // 30px
+  xl4: 2.25rem,  // 36px
+  xl5: 3rem,     // 48px
+  xl6: 3.75rem,  // 60px
+  xl7: 4.5rem,   // 72px
+  xl8: 6rem,     // 96px
+  xl9: 8rem,     // 128px
 );
 
 $lineHeights: (
