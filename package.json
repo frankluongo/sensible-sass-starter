@@ -1,12 +1,13 @@
 {
   "name": "sensible-sass-starter",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "index.css",
   "repository": "https://github.com/frankluongo/sensible-sass-starter.git",
   "author": "Frank Luongo <frank@frankluongo.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "deploy": "webpack --mode=production && npm publish"
   },
   "devDependencies": {
     "css-loader": "^5.0.1",
